@@ -11,16 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Time: 17:12
  */
 @Controller
-public class BlogFrontController {
+public class BlogController {
 
 
-    @RequestMapping({"/","/blog/index"})
+//    @RequestMapping({"/","/blog/index"})    //设置blog界面为默认界面
+    @RequestMapping({"/blog/index"})
 
     public String Index(){
 
 
 
-        return "/blog/front/index";
+        return "/blog/index";
     }
 
     @RequestMapping("/blog/detail")
@@ -28,7 +29,7 @@ public class BlogFrontController {
 
 
 
-        return "/blog/front/detail";
+        return "/blog/detail";
     }
 
 

@@ -1,4 +1,4 @@
-package cn.edu.ctbu.sbadmin.controller;
+package cn.edu.ctbu.sbadmin.blog.conrtoller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

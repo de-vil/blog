@@ -73,5 +73,59 @@
 	</if>
 	</select>
 
+	<select id="countView" resultType="int"  parameterType="cn.edu.ctbu.sbadmin.common.utils.MQuery">
+		select
+		count(1)
+		from
+		blog_content
+		<where>
+			<trim prefix="(" suffix=")" >
+				<foreach collection="wherePara" item="QueryAndItems" separator="or">
+
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="QueryAndItems.queryList" item="MQueryParam">
+							<if test="'`id`,`title`,`slug`,`created`,`modified`,`content`,`type`,`tags`,`categories`,`hits`,`comments_num`,`allow_comment`,`allow_ping`,`allow_feed`,`status`,`author`,`gtm_create`,`gtm_modified`'.indexOf(MQueryParam.key)>=0">
+
+								<choose>
+									<when test="MQueryParam.action =='in' or MQueryParam.action =='not in'">
+										and ${MQueryParam.key} ${MQueryParam.action}
+										<foreach collection="MQueryParam.value1" item="listItem" open="(" separator=","
+												 close=")">
+											#{listItem}
+										</foreach>
+									</when>
+
+									<when test="MQueryParam.action != 'between'">
+										and ${MQueryParam.key} ${MQueryParam.action} #{MQueryParam.value1}
+									</when>
+
+									<otherwise>
+										and ${MQueryParam.key} between #{MQueryParam.value1} and #{MQueryParam.value2}
+									</otherwise>
+
+								</choose>
+							</if>
+
+						</foreach>
+					</trim>
+
+				</foreach>
+			</trim>
+		</where>
+
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${direct}
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
 
 </mapper>

@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("webapi/blog/blog")
+@RequestMapping("webapi/blog/backstage")
 @Slf4j
 public class BlogRestController extends BaseController {
     @Autowired
     BlogServiceImpl blogServiceImpl;
 
     @RequestMapping("/getByPage")
-    @RequiresPermissions("blog:blog:list")
+    @RequiresPermissions("blog:backstage:list")
     public PageUtils list(@RequestParam("where") String where,
                           @RequestParam("pageSize") Integer pageSize,
                           @RequestParam("pageIndex") Integer pageIndex,
@@ -43,7 +43,7 @@ public class BlogRestController extends BaseController {
     }
 
     @RequestMapping("/get")
-    @RequiresPermissions("blog:blog:list")
+    @RequiresPermissions("blog:backstage:list")
     public R get(Long id) throws Exception{
         MQuery mQuery = MQueryHelper.GenQuery("blog_content.id="+id+"^:=",10,0,"","");
         List<BlogDO> blogDOList=blogServiceImpl.listView(mQuery);
@@ -60,7 +60,7 @@ public class BlogRestController extends BaseController {
      * @return
      */
     @RequestMapping("/save")
-    @RequiresPermissions("blog:blog:add")
+    @RequiresPermissions("blog:backstage:add")
     public R save(BlogDO blogDO) {
 
         if (blogServiceImpl.save(blogDO) > 0) {
@@ -76,7 +76,7 @@ public class BlogRestController extends BaseController {
      * @return
      */
     @RequestMapping("/update")
-    @RequiresPermissions("blog:blog:edit")
+    @RequiresPermissions("blog:backstage:edit")
     public R update(BlogDO blogDO) {
 
         if (blogServiceImpl.update(blogDO) > 0) {
@@ -86,7 +86,7 @@ public class BlogRestController extends BaseController {
     }
 
     @RequestMapping("/batchRemove")
-    @RequiresPermissions("blog:blog:remove")
+    @RequiresPermissions("blog:backstage:remove")
     public R batchDelete(@RequestParam("ids[]") Long[] ids) {
         List<BlogDO> blogDOS = blogServiceImpl.findByIds(ids);
         if (blogDOS.size() > 0) {

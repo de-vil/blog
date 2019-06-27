@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BlogController extends BaseController {
 
-    @RequestMapping("/blog/blog/list")
-    @RequiresPermissions("blog:blog:list")
+    @RequestMapping("/blog/backstage/list")
+    @RequiresPermissions("blog:backstage:list")
     public String list(){
-        return "blog/blog/list";
+        return "blog/backstage/list";
     }
 
-    @RequestMapping("/blog/blog/edit")
-    @RequiresPermissions("blog:blog:edit")
+    @RequestMapping("/blog/backstage/edit")
+    @RequiresPermissions("blog:backstage:edit")
     public String edit(){
-        return "blog/blog/edit";
+        return "blog/backstage/edit";
     }
 
 }

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/commonlayout(title='个人博客')"><!-- layout文件路径-->
+
+<th:block th:fragment="css">
+    <!--如果没有内容，请保持 -->
+    <link rel="stylesheet" href="/plugins/chosen/chosen.min.css">
+    <!--DataTables [ OPTIONAL ]-->
+    <link rel="stylesheet" href="/plugins/ztree/css/zTreeStyle/zTreeStyle.css">
+</th:block>
+
+<div th:fragment="content">
+    <!--Page content-->
+    <!--===================================================-->
+    <div id="page-content">
+        <div class="panel">
+            <div class="panel-body">
+                <input type="hidden" id="hidId"/>
+
+                <form id="formBlog" class="smart-form" method="get" action="">
+                    <fieldset>
+                        <input type="hidden" name="id"/>
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>标题</label>
+                                    <input id="title" name="title" class="form-control" type="text" required maxlength="20">
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>作者</label>
+                                    <input id="author" name="author" class="form-control" type="text" required maxlength="20">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>分类</label>
+                                    <select id="categories" name="categories" class="form-control">
+                                        <option value="1">java</option>
+                                        <option value="2">c++</option>
+                                        <option value="3">python</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>分类</label>
+                                    <select id="tags" name="tags" class="form-control">
+                                        <option value="1">java</option>
+                                        <option value="2">c++</option>
+                                        <option value="3">python</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>内容</label>
+                                    <textarea class="form-control valid" rows="5"
+                                              placeholder minlength="2"
+                                              name="content" id="content">
+                                    </textarea>
+                                    <!--<input id="content" name="content" class="form-control" type="text">-->
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </fieldset>
+                </form>
+                <div class="form-group">
+                    <a class="btn btn-info btn-labeled pull-right" onclick="insertOrUpdateForm();">
+                        <i class="btn-label ion-ios-checkmark"></i>提交</a>
+                </div>
+
+                <!--<div class="form-group">
+                    <a   class="btn btn-info btn-labeled pull-right" onclick="insertOrUpdateForm();">
+                        <i class="btn-label ion-ios-checkmark"></i>提交</a>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!--===================================================-->
+    <!--End page content-->
+</div>
+
+<div th:fragment="scripts">
+    <!--如果没有内容，请保持 -->
+    <script src="/plugins/ztree/js/jquery.ztree.all.js"></script>
+    <script src="/plugins/chosen/chosen.jquery.min.js"></script>
+    <script src="/js/editCommon.js"></script>
+    <script src="/pagejs/blog/backstage/edit.js"></script>
+</div>
+
+</html>

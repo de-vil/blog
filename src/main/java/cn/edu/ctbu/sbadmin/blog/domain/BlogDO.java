@@ -2,11 +2,8 @@ package cn.edu.ctbu.sbadmin.blog.domain;
 
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.sql.Date;
+import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Table(name = "blog_content")
@@ -49,7 +46,9 @@ public class BlogDO{
     //作者
     private String author;
     //创建时间
+    @Column(name = "gtm_create")
     private Date gtmCreate;
     //修改时间
+    @Column(name = "gtm_modified")
     private Date gtmModified;
 }

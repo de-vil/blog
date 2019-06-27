@@ -22,7 +22,7 @@ import java.util.Map;
  * Date: 2019-05-13
  * Time: 17:12
  */
-@RequestMapping({"/blog"})
+@RequestMapping({"/","/blog"})
 @Controller
 public class BlogController {
 

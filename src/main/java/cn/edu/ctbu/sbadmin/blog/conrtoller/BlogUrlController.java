@@ -11,8 +11,22 @@ public class BlogUrlController {
         return "/blog/index";
     }
 
-    @RequestMapping("/blog/detail")
-    public String Detail(){
-        return "/blog/detail";
+    @RequestMapping("/blog/detail1")
+    public String Detail1(){
+        return "/blog/detail1";
     }
+
+    @RequestMapping("/blog/detail2")
+    public String Detail2(){
+        return "/blog/detail2";
+    }
+
+
+    @RequestMapping("/blog/detail3")
+    public String Detail3(){
+        return "/blog/detail3";
+    }
+
+
+
 }

@@ -21,7 +21,7 @@ public class BlogServiceImplTest {
 
     @Test
     public void listView()throws Exception {
-        MQuery mQuery = MQueryHelper.GenQuery("blog_content.id=75^:=",10,0,"","");
+        MQuery mQuery = MQueryHelper.GenQuery("",10,0,"","");
         List<BlogDO> blogDOList=blogServiceImpl.listView(mQuery);
         System.out.println(blogDOList);
     }

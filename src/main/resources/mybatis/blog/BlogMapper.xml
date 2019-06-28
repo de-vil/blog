@@ -7,19 +7,11 @@
 		select
 		id,
 		title,
-		slug,
-		created,
 		modified,
 		content,
-		blog_content.type,
 		tags,
 		categories,
 		hits,
-		comments_num,
-		allow_comment,
-		allow_ping,
-		allow_feed,
-		status,
 		author,
 		gtm_create,
 		gtm_modified
@@ -30,7 +22,7 @@
 
 				<trim prefix="(" prefixOverrides="and" suffix=")">
 					<foreach collection="QueryAndItems.queryList" item="MQueryParam">
-						<if test="'`id`,`title`,`slug`,`created`,`modified`,`content`,`type`,`tags`,`categories`,`hits`,`comments_num`,`allow_comment`,`allow_ping`,`allow_feed`,`status`,`author`,`gtm_create`,`gtm_modified`'.indexOf(MQueryParam.key)>=0">
+						<if test="'`id`,`title`,`modified`,`content`,`tags`,`categories`,`hits`,`author`,`gtm_create`,`gtm_modified`'.indexOf(MQueryParam.key)>=0">
 
 							<choose>
 								<when test="MQueryParam.action =='in' or MQueryParam.action =='not in'">
@@ -84,7 +76,7 @@
 
 					<trim prefix="(" prefixOverrides="and" suffix=")">
 						<foreach collection="QueryAndItems.queryList" item="MQueryParam">
-							<if test="'`id`,`title`,`slug`,`created`,`modified`,`content`,`type`,`tags`,`categories`,`hits`,`comments_num`,`allow_comment`,`allow_ping`,`allow_feed`,`status`,`author`,`gtm_create`,`gtm_modified`'.indexOf(MQueryParam.key)>=0">
+							<if test="'`id`,`title`,`modified`,`content`,`tags`,`categories`,`hits`,`author`,`gtm_create`,`gtm_modified`'.indexOf(MQueryParam.key)>=0">
 
 								<choose>
 									<when test="MQueryParam.action =='in' or MQueryParam.action =='not in'">

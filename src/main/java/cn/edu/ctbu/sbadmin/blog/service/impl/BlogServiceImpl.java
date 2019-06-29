@@ -40,4 +40,12 @@ public class BlogServiceImpl extends AbstractService<BlogDO> implements BlogServ
     }
 
 
+
+    public List<BlogDO> findAll(){
+
+
+        List<BlogDO> blogDOList= blogDAO.findAll();
+        return blogDOList;
+
+    }
 }

@@ -45,7 +45,7 @@ public class BlogRestController extends BaseController {
     @RequestMapping("/get")
     @RequiresPermissions("blog:backstage:list")
     public R get(Long id) throws Exception{
-        MQuery mQuery = MQueryHelper.GenQuery("blog_content.id="+id+"^:=",10,0,"","");
+        MQuery mQuery = MQueryHelper.GenQuery("id="+id+"^:=",10,0,"","");
         List<BlogDO> blogDOList=blogServiceImpl.listView(mQuery);
         if (blogDOList.size()>0) {
             return R.ok("data", blogDOList.get(0));

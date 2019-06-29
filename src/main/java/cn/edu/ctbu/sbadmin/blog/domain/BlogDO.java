@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 @Data
 @Table(name = "blog_content")
 public class BlogDO{

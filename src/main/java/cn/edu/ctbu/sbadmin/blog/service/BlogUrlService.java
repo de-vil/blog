@@ -5,11 +5,7 @@ import cn.edu.ctbu.sbadmin.common.utils.MQuery;
 
 import java.util.List;
 
-public interface BlogService  {
-
-    List<BlogDO> listView(MQuery mQuery);
-
-    int countView(MQuery mQuery);
+public interface BlogUrlService {
 
     public List<BlogDO> findAll();
 }

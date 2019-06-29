@@ -35,9 +35,9 @@ public class BlogDO{
     //作者
     private String author;
     //创建时间
-    @Column(name = "gtm_create")
+
     private Date gtmCreate;
     //修改时间
-    @Column(name = "gtm_modified")
+
     private Date gtmModified;
 }

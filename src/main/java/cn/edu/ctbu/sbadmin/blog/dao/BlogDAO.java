@@ -3,8 +3,7 @@ package cn.edu.ctbu.sbadmin.blog.dao;
 import cn.edu.ctbu.sbadmin.blog.domain.BlogDO;
 import cn.edu.ctbu.sbadmin.common.core.MyMapper;
 import cn.edu.ctbu.sbadmin.common.utils.MQuery;
-import org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration;
-import org.springframework.data.jpa.repository.JpaRepository;
+
 
 import java.util.List;
 
@@ -23,6 +22,4 @@ public interface BlogDAO extends MyMapper<BlogDO> {
      */
     public int countView(MQuery mQuery);
 
-
-    public List<BlogDO> findAll();
 }

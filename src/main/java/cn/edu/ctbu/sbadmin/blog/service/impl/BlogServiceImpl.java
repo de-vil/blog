@@ -39,13 +39,4 @@ public class BlogServiceImpl extends AbstractService<BlogDO> implements BlogServ
         return blogDAO.countView(mQuery);
     }
 
-
-
-    public List<BlogDO> findAll(){
-
-
-        List<BlogDO> blogDOList= blogDAO.findAll();
-        return blogDOList;
-
-    }
 }

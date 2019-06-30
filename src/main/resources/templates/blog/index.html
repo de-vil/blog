@@ -186,9 +186,7 @@
                                         </div>
                                     </div>
                                     <div class="blog-body">
-                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>
-                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>
-                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>
+                                        <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops</p>
                                     </div>
                                 </div>
                                 <div class="blog-footer">
@@ -395,79 +393,64 @@
 <div th:fragment="scripts">
 <script type="text/javascript">
 
-    // $(function () {
-    //
-    //     $.ajax({
-    //         striped : true, // 设置为true会有隔行变色效果
-    //         method:"get",
-    //         url:'/webapi/blogs/menu',
-    //         success:function (data) {
-    //             var len=data.length;
-    //             var html="";
-    //
-    //             for(var i = 0; i <1; i++){
-    //                 var item = data[i];
-    //
-    //                 html+=" <div class=\"panel\">\n" +
-    //                     "                                <div class=\"blog-content\">\n" +
-    //                     "                                    <div class=\"blog-title media-block\">\n" +
-    //                     "                                        <div class=\"media-body\">\n" +
-    //                     "                                            <a href=\"/blog/detail1\" class=\"btn-link\">\n" +
-    //                     "                                                <h2>Far far away, behind the word mountains</h2>\n" +
-    //                     "                                            </a>\n" +
-    //                     "                                        </div>\n" +
-    //                     "                                    </div>\n" +
-    //                     "                                    <div class=\"blog-body\">\n" +
-    //                     "                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>\n" +
-    //                     "                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>\n" +
-    //                     "                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>\n" +
-    //                     "                                    </div>\n" +
-    //                     "                                </div>\n" +
-    //                     "                                <div class=\"blog-footer\">\n" +
-    //                     "                                    <div class=\"media-left\">\n" +
-    //                     "                                        <span class=\"label label-success\">5 Days ago</span>\n" +
-    //                     "                                    </div>\n" +
-    //                     "                                    <div class=\"media-body text-right\">\n" +
-    //                     "                                        <span class=\"mar-rgt\"><i class=\"demo-pli-heart-2 icon-fw\"></i>519</span>\n" +
-    //                     "                                        <i class=\"demo-pli-speech-bubble-5 icon-fw\"></i>23\n" +
-    //                     "                                    </div>\n" +
-    //                     "                                </div>\n" +
-    //                     "                            </div>"+
-    //                         "<div class=\"panel\">\n" +
-    //                     "\n" +
-    //                     "                                <div class=\"blog-content\">\n" +
-    //                     "                                    <div class=\"blog-title media-block\">\n" +
-    //                     "                                        <a href=\"/blog/detail2\" class=\"btn-link\">\n" +
-    //                     "                                            <h2>Pride and Prejudice</h2>\n" +
-    //                     "                                        </a>\n" +
-    //                     "                                    </div>\n" +
-    //                     "                                    <div class=\"blog-body\">\n" +
-    //                     "                                        <p><i>Because of this, Mrs Bennet is desperate to find husbands for her daughters. They will then no longer be a burden on her.</i></p>\n" +
-    //                     "                                        <p>Many people know the famous opening sentence of the book: “It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.” This is of course a very ironic remark. What is really true in the time of the novel is this: Single women from poorer families are very interested in a man with a good fortune, or even just a little money. Since they cannot pay their own way in life, they must find a husband.</p>\n" +
-    //                     "                                    </div>\n" +
-    //                     "                                </div>\n" +
-    //                     "                                <div class=\"blog-footer\">\n" +
-    //                     "                                    <div class=\"bg-info blog-img-sm text-center\">\n" +
-    //                     "                                        <h3 class=\"text-light\"><i class=\"demo-pli-mail-send icon-4x\"></i></h3>\n" +
-    //                     "                                    </div>\n" +
-    //                     "                                    <br>\n" +
-    //                     "                                    <div class=\"media-left\">\n" +
-    //                     "                                        <label class=\"label label-primary\">Feature</label>\n" +
-    //                     "                                        <label class=\"label label-default\">New</label>\n" +
-    //                     "                                        <label class=\"label label-default\">Modern</label>\n" +
-    //                     "                                    </div>\n" +
-    //                     "                                    <div class=\"media-body text-right\">\n" +
-    //                     "                                        <span class=\"mar-rgt\"><i class=\"demo-pli-heart-2 icon-fw\"></i>65</span>\n" +
-    //                     "                                        <i class=\"demo-pli-speech-bubble-5 icon-fw\"></i>8\n" +
-    //                     "                                    </div>\n" +
-    //                     "                                </div>\n" +
-    //                     "                            </div>"
-    //             }
-    //             $("#bloglist").html(html);
-    //
-    //         }
-    //         })
-    // })
+    $(function () {
+
+        var rs = {
+            "id":id,
+            "tltle":title,
+            "modified":modified,
+            "content":content,
+            "tags":tags,
+            "categeories":categeories,
+            "author":author
+        };
+
+
+        $.ajax({
+            url: '/webapi/blogs/menu',
+            type: "get",
+            dataType: "json",
+            contentType:"application/json",
+            success: function (rs) {
+
+                var len = rslength;
+                var htmltext = "";
+
+                for (var i = 0; i < len; i++) {
+                    var item = rs[i];
+
+                    htmltext += " <div class=\"panel\">\n" +
+                        "                                <div class=\"blog-content\">\n" +
+                        "                                    <div class=\"blog-title media-block\">\n" +
+                        "                                        <div class=\"media-body\">\n" +
+                        "                                            <a href=\"/blog/detail1\" class=\"btn-link\">\n" +
+                        "                                                <h2>" + item.title + "</h2>\n" +
+                        "                                            </a>\n" +
+                        "                                        </div>\n" +
+                        "                                    </div>\n" +
+                        "                                    <div class=\"blog-body\">\n" +
+                        "                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>\n" +
+                        "                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>\n" +
+                        "                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>\n" +
+                        "                                    </div>\n" +
+                        "                                </div>\n" +
+                        "                                <div class=\"blog-footer\">\n" +
+                        "                                    <div class=\"media-left\">\n" +
+                        "                                        <span class=\"label label-success\">5 Days ago</span>\n" +
+                        "                                    </div>\n" +
+                        "                                    <div class=\"media-body text-right\">\n" +
+                        "                                        <span class=\"mar-rgt\"><i class=\"demo-pli-heart-2 icon-fw\"></i>519</span>\n" +
+                        "                                        <i class=\"demo-pli-speech-bubble-5 icon-fw\"></i>23\n" +
+                        "                                    </div>\n" +
+                        "                                </div>\n" +
+                        "                            </div>"
+
+                }
+                $("#bloglist").html(htmltext);
+            }
+
+        })
+    })
 
 </script>
 </div>

@@ -3,12 +3,13 @@ package cn.edu.ctbu.sbadmin.blog.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "blog_content")
-public class BlogDO{
+public class BlogDO implements Serializable {
 
     /**
      * 主键 自增

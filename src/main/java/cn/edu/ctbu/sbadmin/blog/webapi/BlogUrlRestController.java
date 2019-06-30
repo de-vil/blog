@@ -23,8 +23,7 @@ public class BlogUrlRestController {
     @Autowired
     private BlogUrlServiceImpl blogUrlServiceImpl;
 
-    @RequestMapping(value = "/menu",produces = "text/html;charset=UTF-8")
-    @ResponseBody
+    @GetMapping("/menu")
     public List<BlogDO> getAll(){
         List<BlogDO> blogList = blogUrlServiceImpl.findAll();
         return blogList;
